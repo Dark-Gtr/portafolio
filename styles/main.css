@@ -16,19 +16,20 @@ body{
     position: fixed;
     display: flex;
     overflow: hidden;
-    padding: 0.6rem;
     margin: 0.8rem;
     flex-direction: column;
     border-radius: 50%;
     background-color: var(--main-color);
     font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.5s;
+    transition: width 0.5s, height 0.35s, border-radius 0.5s, border-top-left-radius 0.9s;
+    
 }
 
 .icon__menu-container{
     background: none;
     border: none;
     display: flex ;
+    margin: 0.6rem;
 }
 .icon__menu-toggle{
     color: white;
@@ -42,22 +43,25 @@ body{
 .header-hidden{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     width: 0;
     height: 0;
     overflow: hidden;
-    transition: all 0.5s;
+    visibility: collapse;
+    transition: width 0.5s, height 0.35s;
 }
 
 .header-active{
     margin: 0;
     border-radius: 0;
+    padding: 0;
+    transition: border-radius 0.5s, border-top-left-radius 0.2s;
 }
 
 .header-visible{
     width: 100vw;
     height: 100vh;
+    visibility: visible;
 }
 
 .test{
@@ -92,7 +96,7 @@ body{
     height: 100%;
 }
 .nav ul li{
-    width: 70vw;
+    width: 75vw;
     list-style: none;
     padding: 5px;
     letter-spacing: 5px;
