@@ -27,10 +27,10 @@ const mainList = document.querySelectorAll(".list");
 
 for (let i = 0; i < mainList.length; i++) {
     mainList[i].children[0].onclick = () => {
-        let b = 0;
+        /* let b = 0;
         while (b < mainList.length) {
             mainList[b++].className = "list";
-        }
+        } */ // esto está en prueba
 
         /* mainList[i].classList.toggle("list-active"); */
 
@@ -57,7 +57,8 @@ let switchContact = false;
 mainList[0].classList.toggle('list-active');
 
 const activateListByScroll = () => {
-    if (window.scrollY < height && switchHome === false) {
+    const deadZone = 460;
+    if (window.scrollY < (height - deadZone) && switchHome === false) {
         switchHome = true;
         switchAbout = false;
         switchPortfolio = false;
@@ -73,7 +74,7 @@ const activateListByScroll = () => {
         
 
     }
-    if(window.scrollY >= height && window.scrollY < (height * 2) && switchAbout === false){
+    if(window.scrollY >= height && window.scrollY < ((height * 2) - deadZone) && switchAbout === false){
         switchHome = false;
         switchAbout = true;
         switchPortfolio = false;
@@ -93,7 +94,7 @@ const activateListByScroll = () => {
 
         
     }
-    if (window.scrollY > (height * 2) && window.scrollY < (height * 3) && switchPortfolio === false) {
+    if (window.scrollY > (height * 2) && window.scrollY < ((height * 3) - deadZone) && switchPortfolio === false) {
         switchHome = false;
         switchAbout = false;
         switchPortfolio = true;
