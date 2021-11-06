@@ -21,7 +21,7 @@ body{
     border-radius: 50%;
     background-color: var(--main-color);
     font-family: Arial, Helvetica, sans-serif;
-    transition: width 0.5s, height 0.35s, border-radius 0.5s, border-top-left-radius 0.9s;
+    transition: width 0.5s, height 0.35s, border-radius 0.5s, border-top-left-radius 0.9s, margin 0.5s;
     
 }
 
@@ -30,6 +30,7 @@ body{
     border: none;
     display: flex ;
     margin: 0.6rem;
+    z-index: 2;
 }
 .icon__menu-toggle{
     color: white;
@@ -41,6 +42,8 @@ body{
 }
 
 .header-hidden{
+    position: relative;
+    top: -25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +58,7 @@ body{
     margin: 0;
     border-radius: 0;
     padding: 0;
-    transition: border-radius 0.5s, border-top-left-radius 0.2s;
+    transition: border-radius 0.5s, border-top-left-radius 0.2s, margin 0.5s;
 }
 
 .header-visible{
@@ -64,15 +67,39 @@ body{
     visibility: visible;
 }
 
-.test{
+.header__user--photo{
     display: inline-block;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-image: url('../assets/img/foto.jpg');
+    border: 5px solid #666;
+    box-sizing: content-box;
+    background-image: url(../assets/img/foto.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.header__user--name{
+    margin: 14px;
+    font-size: 3rem;
+    color: white;
+}
+
+.header__social--icons{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 ;
+    font-size: 3.3rem;
+    list-style: none;
+}
+
+.header__social--icons li{
+    margin: 0px 10px;
+}
+
+.header__social--icons li a{
+    color: white;
 }
 
 .nav{
@@ -91,14 +118,14 @@ body{
 .nav ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-size: 3rem;
     height: 100%;
 }
 .nav ul li{
+    padding: 5px;
+    margin: 10px 0;
     width: 75vw;
     list-style: none;
-    padding: 5px;
     letter-spacing: 5px;
 }
 
