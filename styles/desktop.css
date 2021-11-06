@@ -36,12 +36,20 @@
 .nav ul li{
     width: 17vw;
     cursor: pointer;
+    
 }
 
 .nav ul li button{
+    font-size: 2.5rem;
     cursor: pointer;
 }
 
 .main-container{
     margin-left: 19vw;
+}
+
+.start{
+    margin-left: 0.5vw;
+    background-image: url('https://previews.dropbox.com/p/thumb/ABVysHFyJPZLzhI31HdtSZV-YmtObnPRyP71hir2JlAr-CXxuuOMg2BpzfzXCBcm813E9C0fdFrgHPwwYrrvf6XWS6maGcZ3u_v7R2kygxM0-GSynLZesqTV7Q_d7SfHfjyRYCCSN1ZR5R-9DME01VwPOLn5WwpUCvLAKplkSo63qBYpUIcyJmJOBCHinSneAg44Mh54M1dvB1UrghzyLkm4R55OsFGBiD9rCH-kTo3F6-H-x2HnGuaS3vZmUABv1ZqvKHoy6OHHdD0H_3ENwGIC4pOViUbNBTkmFvLdRW6Z6yNY5a3tx2Shr2agg9_0Q-64pN-tcxQVhGMtm3WbKNHaJMWsxs7wqzYzIM5puHZx_w/p.jpeg?fv_content=true&size_mode=5');
+    
 }

@@ -100,6 +100,10 @@ const activateListByScroll = () => {
         switchPortfolio = true;
         switchContact = false;
 
+        if (mainList[0].classList.length > 1) {
+            mainList[0].classList.toggle('list-active');
+        }
+
         if (mainList[1].classList.length > 1) {
             mainList[1].classList.toggle('list-active');
         }
@@ -117,6 +121,10 @@ const activateListByScroll = () => {
         switchAbout = false;
         switchPortfolio = false;
         switchContact = true;
+
+        if (mainList[0].classList.length > 1) {
+            mainList[0].classList.toggle('list-active');
+        }
 
         if (mainList[2].classList.length > 1) {
             mainList[2].classList.toggle('list-active');
