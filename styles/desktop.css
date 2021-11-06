@@ -1,3 +1,47 @@
-body{
-    
+.main-header{
+    left: 0;
+    right: unset;
+    width: 19vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0.8rem;
+    border-radius: 0;
+}
+
+.icon__menu-container{
+    visibility: collapse;
+}
+
+.header-hidden{
+    width: initial;
+    height: initial;
+    overflow: initial;
+    visibility: visible;
+}
+
+.header__user--photo{
+    width: 150px;
+    height: 150px;
+}
+
+.header__user--name{
+    font-size: 2.2rem;
+}
+
+.nav{
+    max-width: 154px;
+    height: initial;
+}
+
+.nav ul li{
+    width: 17vw;
+    cursor: pointer;
+}
+
+.nav ul li button{
+    cursor: pointer;
+}
+
+.main-container{
+    margin-left: 19vw;
 }
