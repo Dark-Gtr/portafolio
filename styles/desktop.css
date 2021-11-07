@@ -1,4 +1,4 @@
-.main-header{
+.main-header__container{
     left: 0;
     right: unset;
     width: 19vw;
@@ -6,13 +6,14 @@
     margin: 0;
     padding: 0.8rem;
     border-radius: 0;
+    transition: none;
 }
 
 .icon__menu-container{
     visibility: collapse;
 }
 
-.header-hidden{
+.header-nav__container{
     width: initial;
     height: initial;
     overflow: initial;
@@ -50,6 +51,6 @@
 
 .start{
     margin-left: 0.5vw;
-    background-image: url('https://previews.dropbox.com/p/thumb/ABVysHFyJPZLzhI31HdtSZV-YmtObnPRyP71hir2JlAr-CXxuuOMg2BpzfzXCBcm813E9C0fdFrgHPwwYrrvf6XWS6maGcZ3u_v7R2kygxM0-GSynLZesqTV7Q_d7SfHfjyRYCCSN1ZR5R-9DME01VwPOLn5WwpUCvLAKplkSo63qBYpUIcyJmJOBCHinSneAg44Mh54M1dvB1UrghzyLkm4R55OsFGBiD9rCH-kTo3F6-H-x2HnGuaS3vZmUABv1ZqvKHoy6OHHdD0H_3ENwGIC4pOViUbNBTkmFvLdRW6Z6yNY5a3tx2Shr2agg9_0Q-64pN-tcxQVhGMtm3WbKNHaJMWsxs7wqzYzIM5puHZx_w/p.jpeg?fv_content=true&size_mode=5');
+    background-image: url('https://res.cloudinary.com/dasfkbu3k/image/upload/v1636251615/Portfolio/pexels-kevin-ku-577585-high_pia3m3.jpg');
     
 }

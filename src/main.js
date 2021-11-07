@@ -8,8 +8,8 @@ html.style.setProperty("--main-color", `${colorTheme1[0]}`);
 
 //funcion para activar los estilos que corresponden al menu
 const activateMenu = () => {
-    document.querySelector(".main-header").classList.toggle('header-active');
-    document.querySelector(".header-hidden").classList.toggle("header-visible");
+    document.querySelector(".main-header__container").classList.toggle('main-header__container--visible');
+    document.querySelector(".header-nav__container").classList.toggle("header-nav__container--visible");
     document.querySelector(".nav").classList.toggle("nav-active");
 }
 

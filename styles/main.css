@@ -12,7 +12,7 @@ body{
     display: flex;
 }
 
-.main-header{
+.main-header__container{
     position: fixed;
     right: 0;
     display: flex;
@@ -25,6 +25,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     transition: width 0.5s, height 0.35s, border-radius 0.5s, border-top-right-radius 0.9s, margin 0.5s;
     
+}
+
+.main-header__container--visible{
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    transition: border-radius 0.5s, border-top-right-radius 0.2s, margin 0.5s;
 }
 
 .icon__menu-container{
@@ -46,27 +53,22 @@ body{
     font-size: 2.5rem;
 }
 
-.header-hidden{
+.header-nav__container{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 0;
     height: 0;
+    min-height: 0;
     overflow: hidden;
     visibility: collapse;
-    transition: width 0.5s, height 0.35s;
+    transition: width 0.5s, height 0.35s, min-height 0.35s;
 }
 
-.header-active{
-    margin: 0;
-    border-radius: 0;
-    padding: 0;
-    transition: border-radius 0.5s, border-top-right-radius 0.2s, margin 0.5s;
-}
-
-.header-visible{
+.header-nav__container--visible{
     width: 100vw;
     height: 100vh;
+    min-height: 640px;
     padding-top: 12px;
     visibility: visible;
 }
@@ -78,7 +80,7 @@ body{
     border-radius: 50%;
     border: 5px solid #666;
     box-sizing: content-box;
-    background-image: url(../assets/img/foto.jpg);
+    background-image: url('https://res.cloudinary.com/dasfkbu3k/image/upload/v1636252049/Portfolio/foto_kglkyx.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -154,6 +156,16 @@ body{
     color: var(--main-color);
 }
 
+.header__user--CV{
+    margin-top: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+}
+
 .icon{
     position: relative;
     top: 2px;
@@ -170,7 +182,7 @@ body{
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    background-image: url('https://previews.dropbox.com/p/thumb/ABVAe2jvqU4bU7LNUNfoPf4urwZxvtDFLw6RC6WBjzAZkkQul9JRG8BSIIyA_05vvoR5jy7Fy0IJndcdWMIguCHOaIBok2ROUhk51l8x-aR8d_cehvNwA75Bm982taFIHsWxsOlniXGoEvHd-pBPRmoIjfnBudv4akMz28v6Gp_35xwx5sDsFTccdIIiqCTMnDX5yUwvqMOVY27-GCaRENLeFM1hrz68_enMhToYVLkhtvYx2_phs5VzafQbQyKhUfCs4bLVtiCVjHlsYnLNvfVmReWChdnJbFYv9zQANeJ0DwXdl5EMUUbWK2W9b_Zl1u4Iqw4PbhQe22W6B33srp94wVSaBISWrBjRZGn52vYm-A/p.jpeg?fv_content=true&size_mode=5');
+    background-image: url('https://res.cloudinary.com/dasfkbu3k/image/upload/v1636251614/Portfolio/pexels-kevin-ku-577585-small_ueivm2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
