@@ -200,6 +200,7 @@ body{
 
 .main-start__container{
     position: relative;
+    z-index: 0;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
@@ -211,19 +212,26 @@ body{
 }
 
 .start__container{
+    display: flex;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    
     background-color: rgba(0, 0, 0, 0.301);
     backdrop-filter: blur(1px);
 }
 
+.start__user--info{
+    color: white;
+    margin: auto;
+    background-color: white;
+}
+
 .spark-spam__container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: absolute;
     bottom: 5px;
-    z-index: 1;
+    z-index: -1;
     width: 100%;
     height: 2px;
     background-color: transparent;
