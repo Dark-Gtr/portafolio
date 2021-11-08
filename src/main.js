@@ -5,7 +5,91 @@ const colorTheme2 = ["#00bcd4"]
 let html = document.querySelector("html");
 html.style.setProperty("--main-color", `${colorTheme1[0]}`);
 
+//Efectos de sonido
+const pushButtonSound = document.createElement('audio');
+pushButtonSound.src = '../assets/pushButton.mp3';
+pushButtonSound.preload = 'auto';
 
+document.querySelector('.header__user--CV').onclick = () => {
+    pushButtonSound.play()
+}
+
+/* alert(`componer el menu con un z-index ya que la seccion estar esta sobre puesta, 
+    arreglar el width y heigh de spark ya que cuando son muchos se reduce el tamaño,
+    iniciar la animacion de spark con la particula oculta
+`) */
+
+const partiCulas = () => {
+    const sparkContainer = document.querySelector('.spark-spam__container');
+
+    if (html.clientWidth < 1024) {
+        for (let i = 0; i < 8; i++) {
+            const spark = document.createElement('span');
+            let randomYpos = Math.random() * (400 - 120) + 120;
+            let randomXpos = Math.random() * (70 - 20) + 20;
+    
+            let test;
+            if (Math.random() < 0.5) {
+                test = '-';
+            } else{
+                test = '';
+            }
+            let randomDelay = Math.random() * (3000 - 1000) + 1000;
+            
+            spark.style.display = 'inline-block';
+            spark.style.width = '8px';
+            spark.style.height = '10px';
+            spark.style.backgroundColor = 'transparent';
+            spark.style.borderRadius = '50%';
+            /* spark.style.boxShadow = '0px 0px 5px 3px var(--main-color), 0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)' */
+            spark.animate([
+                {transform: 'translate(0px, 0px)'},
+                {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
+                {transform: `translate(0px, -${randomYpos}px)`}
+            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
+            spark.animate([
+                {boxShadow: '0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)', backgroundColor: 'white'},
+                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
+            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay})
+            sparkContainer.appendChild(spark)
+        }
+    } else {
+        for (let i = 0; i < 50; i++) {
+            const spark = document.createElement('span');
+            let randomYpos = Math.random() * (600 - 120) + 120;
+            let randomXpos = Math.random() * (70 - 20) + 20;
+    
+            let test;
+            if (Math.random() < 0.5) {
+                test = '-';
+            } else{
+                test = '';
+            }
+            let randomDelay = Math.random() * (3000 - 1000) + 1000;
+            
+            spark.style.display = 'inline-block'
+            spark.style.width = '8px'
+            spark.style.height = '10px'
+            spark.style.backgroundColor = 'transparent'
+            spark.style.borderRadius = '50%'
+            /* spark.style.boxShadow = '0px 0px 5px 3px var(--main-color), 0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)' */
+            spark.animate([
+                {transform: 'translate(0px, 0px)'},
+                {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
+                {transform: `translate(0px, -${randomYpos}px)`}
+            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
+            spark.animate([
+                {boxShadow: '0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)', backgroundColor: 'white'},
+                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
+            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay})
+            sparkContainer.appendChild(spark)
+    
+        }
+    }
+    
+}
+
+partiCulas()
 //funcion para activar los estilos que corresponden al menu
 const activateMenu = () => {
     document.querySelector(".main-header__container").classList.toggle('main-header__container--visible');
@@ -94,7 +178,7 @@ const activateListByScroll = () => {
 
         
     }
-    if (window.scrollY > (height * 2) && window.scrollY < ((height * 3) - deadZone) && switchPortfolio === false) {
+    if (window.scrollY > ((height * 2) - 150) && window.scrollY < ((height * 3) - deadZone) && switchPortfolio === false) {
         switchHome = false;
         switchAbout = false;
         switchPortfolio = true;
@@ -138,3 +222,4 @@ const activateListByScroll = () => {
 }
 
 window.onscroll = activateListByScroll;
+
