@@ -1,9 +1,14 @@
-const colorTheme1 = ["#ff5722"]
-const colorTheme2 = ["#00bcd4"]
+const colorTheme1 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
+const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
 
 // Aquí se implementa el tema de colores
 let html = document.querySelector("html");
-html.style.setProperty("--main-color", `${colorTheme1[0]}`);
+html.style.setProperty('--main-color-down2', `${colorTheme2[0]}`);
+html.style.setProperty('--main-color-down', `${colorTheme2[1]}`);
+html.style.setProperty("--main-color", `${colorTheme2[2]}`);
+html.style.setProperty('--main-color-up', `${colorTheme2[3]}`);
+html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
+
 
 //Efectos de sonido
 const pushButtonSound = document.createElement('audio');
