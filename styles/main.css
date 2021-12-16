@@ -9,7 +9,7 @@ html{
 }
 
 body{
-    display: flex;
+    
     font-size: 1.6rem;
     font-family: 'Dm Sans',Helvetica, sans-serif;
 }
@@ -75,14 +75,14 @@ body{
     width: 100vw;
     height: unset;
     min-height: 640px;
-    padding-top: 12px;
+    padding: 12px;
     visibility: visible;
 }
 
 .header__user--photo{
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     border: 5px solid #666;
     box-sizing: content-box;
@@ -195,7 +195,18 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
-    height: 100vh;
+    
+}
+
+body::-webkit-scrollbar{
+    background-color: #393e3e;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 25px;
+    border: 4px transparent solid;
+    background-clip: content-box;
+    background-color: var(--main-color);
 }
 
 section.main-start__container{
@@ -230,12 +241,21 @@ section.main-start__container{
     border-radius: 8px;
     background-color: #ffffff3d;
     backdrop-filter: blur(5px);
-    animation: start-animation 2s ease;
+    animation: start-animation-user-name 2s ease, user-mame-float 2s 2s infinite ease-in-out alternate-reverse;
 }
 
-@keyframes start-animation {
+@keyframes start-animation-user-name {
     from{
         transform: translate(0px, 51vh);
+    }
+    to{
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes  user-mame-float {
+    from{
+        transform: translate(0px, -50px);
     }
     to{
         transform: translate(0px, 0px);
@@ -253,6 +273,7 @@ section.main-start__container{
     background-color: transparent;
 }
 
+
 section{
     display: flex;
     flex-direction: column;
@@ -264,11 +285,11 @@ section{
     padding: 20px 0px;
 }
 
-.section__title--about{
+.section__title{
     display: flex;
     align-self: start;
     align-items: center;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--main-color-down2);
 }
 
@@ -291,34 +312,118 @@ section{
 
 .main-about__technology--container{
     width: 100%;
+    overflow-x: scroll;
 }
 
 .about__technology--container{
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    
+    width: max-content;
+    padding-bottom: 10px;
+}
+
+.about__technology--title{
+    text-align: center;
+    margin-bottom: -20px;
+    color: var(--main-color-down);
+    border-bottom: 2px solid var(--main-color-down2);
 }
 
 .about__technology--container .about__technology--item{
     display: flex;
+    width: 150px;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 8px;
+    box-shadow: 0 0 4px #555;
+    margin: 8px 16px;
+    padding: 8px;
+    border-radius: 8px;
 }
+
+.about__technology--container .about__technology--item figure{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .about__technology--container .about__technology--item figure img{
     width: 75px;
     height: 75px;
+}
+
+.about__technology--container .about__technology--item figure .npm-logo{
+    height: 50px;
 }
 .about__technology--container .about__technology--item figure figcaption{
     text-align: center;
 }
 
-
 .main-portfolio__container{
-    background-color: orangered;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.section__title--portfolio{
+    margin-top: 12px;    
+}
+
+.main-portfolio__container .portfolio__proyects--container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+    padding: 40px 10px;
+    background: linear-gradient(0deg, var(--main-color-down), var(--main-color-down2));
+}
+
+.portfolio__proyects--item{
+    position: relative;
+    width: 300px;
+    height: 250px;
+    max-width: 500px;
+    margin: 16px;
+    
+}
+
+.proyect__image{
+    display: inline-block;
+    width: 100%;
+    height: 85%;
+    border: 4px solid #666;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.proyect__links--container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.proyect__links--container a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.proyect__image--batatabit{
+    background-image: url('https://res.cloudinary.com/dasfkbu3k/image/upload/v1636495305/Portfolio/batatabit_zyvnxv.jpg');
+    
 }
 
 .main-contact__container{
+    height: 100vh;
+}
+
+footer{
+    width: 100vw;
+    height: 8vh;
     background-color: red;
 }

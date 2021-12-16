@@ -1,13 +1,13 @@
-const colorTheme1 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
-const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
+const colorTheme2 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
+const colorTheme1 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
 
 // Aquí se implementa el tema de colores
 let html = document.querySelector("html");
-html.style.setProperty('--main-color-down2', `${colorTheme2[0]}`);
-html.style.setProperty('--main-color-down', `${colorTheme2[1]}`);
-html.style.setProperty("--main-color", `${colorTheme2[2]}`);
-html.style.setProperty('--main-color-up', `${colorTheme2[3]}`);
-html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
+html.style.setProperty('--main-color-down2', `${colorTheme1[0]}`);
+html.style.setProperty('--main-color-down', `${colorTheme1[1]}`);
+html.style.setProperty("--main-color", `${colorTheme1[2]}`);
+html.style.setProperty('--main-color-up', `${colorTheme1[3]}`);
+html.style.setProperty('--main-color-up2', `${colorTheme1[4]}`)
 
 
 //Efectos de sonido
@@ -28,7 +28,7 @@ const partiCulas = () => {
     const sparkContainer = document.querySelector('.spark-spam__container');
 
     if (html.clientWidth < 1024) {
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 20; i++) {
             const spark = document.createElement('span');
             let randomYpos = Math.random() * (400 - 120) + 120;
             let randomXpos = Math.random() * (70 - 20) + 20;
@@ -44,22 +44,23 @@ const partiCulas = () => {
             spark.style.display = 'inline-block';
             spark.style.width = '8px';
             spark.style.height = '10px';
-            spark.style.backgroundColor = 'transparent';
-            spark.style.borderRadius = '50%';
-            /* spark.style.boxShadow = '0px 0px 5px 3px var(--main-color), 0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)' */
+            spark.style.backgroundColor = 'white'
+            spark.style.borderRadius = '50%'
+            spark.style.boxShadow = '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)';
             spark.animate([
                 {transform: 'translate(0px, 0px)'},
                 {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
                 {transform: `translate(0px, -${randomYpos}px)`}
-            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
-            spark.animate([
+            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'});
+
+            /* spark.animate([
                 {boxShadow: '0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)', backgroundColor: 'white'},
                 {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
-            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay})
+            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay}) */
             sparkContainer.appendChild(spark)
         }
     } else {
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 180; i++) {
             const spark = document.createElement('span');
             let randomYpos = Math.random() * (600 - 120) + 120;
             let randomXpos = Math.random() * (70 - 20) + 20;
@@ -75,18 +76,19 @@ const partiCulas = () => {
             spark.style.display = 'inline-block'
             spark.style.width = '8px'
             spark.style.height = '10px'
-            spark.style.backgroundColor = 'transparent'
+            spark.style.backgroundColor = 'white'
             spark.style.borderRadius = '50%'
-            /* spark.style.boxShadow = '0px 0px 5px 3px var(--main-color), 0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)' */
+            spark.style.boxShadow = '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)';
+            
             spark.animate([
                 {transform: 'translate(0px, 0px)'},
                 {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
                 {transform: `translate(0px, -${randomYpos}px)`}
             ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
-            spark.animate([
-                {boxShadow: '0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)', backgroundColor: 'white'},
+            /* spark.animate([
+                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'},
                 {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
-            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay})
+            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay}) */
             sparkContainer.appendChild(spark)
     
         }
@@ -94,7 +96,9 @@ const partiCulas = () => {
     
 }
 
-partiCulas()
+partiCulas();
+
+console.log(document.querySelector('.spark-spam__container').childElementCount);
 //funcion para activar los estilos que corresponden al menu
 const activateMenu = () => {
     document.querySelector(".main-header__container").classList.toggle('main-header__container--visible');
