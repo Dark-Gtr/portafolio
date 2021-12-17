@@ -114,7 +114,11 @@ body{
     color: white;
 }
 
-.form__social--icons li a {
+.form__social--icons{
+    font-size: 3.3rem;
+}
+
+.form__social--icons li a{
     color: var(--main-color);
 }
 
