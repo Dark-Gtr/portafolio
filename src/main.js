@@ -3,11 +3,11 @@ const colorTheme1 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
 
 // Aquí se implementa el tema de colores
 let html = document.querySelector("html");
-html.style.setProperty('--main-color-down2', `${colorTheme1[0]}`);
-html.style.setProperty('--main-color-down', `${colorTheme1[1]}`);
-html.style.setProperty("--main-color", `${colorTheme1[2]}`);
-html.style.setProperty('--main-color-up', `${colorTheme1[3]}`);
-html.style.setProperty('--main-color-up2', `${colorTheme1[4]}`)
+html.style.setProperty('--main-color-down2', `${colorTheme2[0]}`);
+html.style.setProperty('--main-color-down', `${colorTheme2[1]}`);
+html.style.setProperty("--main-color", `${colorTheme2[2]}`);
+html.style.setProperty('--main-color-up', `${colorTheme2[3]}`);
+html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
 
 
 //Efectos de sonido
