@@ -114,6 +114,10 @@ body{
     color: white;
 }
 
+.form__social--icons li a {
+    color: var(--main-color);
+}
+
 /* .nav{
     
     position: initial;
