@@ -179,23 +179,37 @@
             <div class="section__title--portfolio section__title">
                 <ion-icon name="chevron-forward-outline" class="icon__arrow--right"></ion-icon><h2>Contactame</h2>
             </div>
+
             <div class="user__social--container">
                 <ul class="form__social--icons">
                     <li><a href="http://" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-twitter"></ion-icon></a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100001996880363" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-facebook"></ion-icon></a></li>
                     <li><a href="https://github.com/Dark-Gtr" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon></a></li>
                     <li><a href="https://www.linkedin.com/in/jose-luis-gonz%C3%A1lez-aguilera-456a8b221/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="mailto:dark.gtn@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
                 </ul>
             </div>
+
             <div class="form__container">
-                <form action="post" class="contact-form">
-                    <label for="">
-                        <input type="text" id="" placeholder="correo">
+                
+                <form action="" method="post" class="contact-form">
+
+                    <div class="contact-form__first-container">
+                        <label for="contact-form-name">
+                            <input type="text" id="contact-form-name" placeholder="nombre">
+                        </label>
+                        
+                        <label for="contact-form-email">
+                            <input type="text" id="contact-form-email" placeholder="correo">
+                        </label>
+                    </div>
+                    
+                    
+                    <label for="contact-form-message">
+                        <textarea id="contact-form-message" cols="30" rows="10" placeholder="deja un comentario"></textarea>
                     </label>
-    
-                    <label for="form-message">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </label>
+
+                    <input type="submit" value="enviar" class="contact-form-submit">
                 </form>
             </div>
             <div class="contact__CV--container">
