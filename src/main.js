@@ -232,3 +232,42 @@ const activateListByScroll = () => {
 
 window.onscroll = activateListByScroll;
 
+const proyectActivator = () => {
+    const button = document.querySelectorAll(".button__proyect-info");
+    const infoContainerHeight = document.querySelector(".proyect__image").clientHeight;
+    const infoContainerWidth = document.querySelector(".proyect__image").clientWidth;
+    const proyectInfoContainer = document.querySelectorAll(".proyect-info--container");
+
+    let interruptor = false;
+
+    button.forEach(item => {
+        item.onclick = () => {
+            if (item.nextElementSibling.clientWidth > 1) {
+                item.nextElementSibling.style.width = `0px`;
+                item.nextElementSibling.style.height = `0px`;
+                item.nextElementSibling.style.borderBottomRightRadius = "30px";
+                /* item.nextElementSibling.style.transition = "height 1s"; */
+            } else {
+                item.nextElementSibling.style.width = `${infoContainerWidth}px`;
+                item.nextElementSibling.style.height = `${infoContainerHeight}px`;
+                item.nextElementSibling.style.borderBottomRightRadius = "0px";
+                
+                
+            }
+            
+        }
+    });
+    /* proyectInfoContainer.style.width = `${infoContainerWidth}px`;
+    proyectInfoContainer.style.height = `${infoContainerHeight}px`; */
+    /* button.onclick = () => {
+        if (interruptor === false) {
+            
+        }
+    } */
+    /* for (const item of proyectInfoContainer) {
+        
+    } */
+    
+}
+
+proyectActivator();
