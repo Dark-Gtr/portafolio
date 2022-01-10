@@ -425,6 +425,19 @@ section{
     margin: 15px 0;
 }
 
+.button__carrousel{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -10;
+}
+
+.carrousel-fixer{
+    position: relative;
+    width: 100vw;
+    display: flex;
+}
+
 .portfolio__proyects--item{
     position: relative;
     width: 100%;

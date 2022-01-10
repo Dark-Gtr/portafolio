@@ -58,5 +58,37 @@
 }
 
 .main-portfolio__container .portfolio__proyects--container{
-    width: 100%;
+    position: relative;
+    width: 83vw;
+    overflow: hidden;
+}
+
+.button__carrousel{
+    width: auto;
+    height: auto;
+    top: 50%;
+    z-index: 2;
+    font-size: 5rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.button__carrousel--right{
+    right: 5px;
+}
+
+.button__carrousel--left{
+    left: 5px;
+    transform: rotate(180deg);
+}
+
+.portfolio__proyects--carrousel{
+    transition: transform 1s;
+    
+}
+
+.carrousel-fixer{
+    width: 83vw;
+    display: flex;
 }

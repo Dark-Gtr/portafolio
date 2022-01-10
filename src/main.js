@@ -246,7 +246,6 @@ const proyectActivator = () => {
                 item.nextElementSibling.style.width = `0px`;
                 item.nextElementSibling.style.height = `0px`;
                 item.nextElementSibling.style.borderBottomRightRadius = "30px";
-                /* item.nextElementSibling.style.transition = "height 1s"; */
             } else {
                 item.nextElementSibling.style.width = `${infoContainerWidth}px`;
                 item.nextElementSibling.style.height = `${infoContainerHeight}px`;
@@ -257,17 +256,42 @@ const proyectActivator = () => {
             
         }
     });
-    /* proyectInfoContainer.style.width = `${infoContainerWidth}px`;
-    proyectInfoContainer.style.height = `${infoContainerHeight}px`; */
-    /* button.onclick = () => {
-        if (interruptor === false) {
-            
-        }
-    } */
-    /* for (const item of proyectInfoContainer) {
-        
-    } */
+    
     
 }
 
 proyectActivator();
+
+
+const buttonCarrousel = () => {
+    const buttonRight = document.querySelector(".button__carrousel--right");
+    const buttonLeft = document.querySelector(".button__carrousel--left");
+    const slider = document.querySelector(".portfolio__proyects--carrousel");
+
+    const slid = 83;
+    const maxSlid = (slider.childElementCount - 1);
+    let currentSlid = 0;
+    /* button.onclick = () => {
+        
+        slider.style.transform = `translate(-${slid}vw, 0px)`
+    } */
+    buttonRight.onclick = () => {
+        if (currentSlid > -(slid * maxSlid)) {
+            currentSlid -= slid;
+            slider.style.transform = `translate(${currentSlid}vw, 0px)`;
+            console.log(currentSlid);
+        }
+    }
+
+    buttonLeft.onclick = () => {
+        if (currentSlid < 0) {
+            currentSlid += slid
+            slider.style.transform = `translate(${currentSlid}vw, 0px)`;
+            console.log(currentSlid);
+        }
+    }
+
+    
+}
+
+buttonCarrousel()
