@@ -119,7 +119,6 @@ document.querySelector(".icon__menu-container").onclick = activateMenu;
 
 const mainList = document.querySelectorAll(".list");
 
-alert("componer el ancho de los bordes del navbar")
 
 for (let i = 0; i < mainList.length; i++) {
     mainList[i].children[2].onclick = () => {
