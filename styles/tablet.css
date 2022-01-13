@@ -1,3 +1,91 @@
 .portfolio__proyects--item{
     margin: auto;
 }
+
+.nav ul li b:nth-child(1){
+    width: 85.2%;
+}
+
+.nav ul li b:nth-child(2){
+    width: 85.2%;
+}
+
+@media (min-width: 630px) {
+    .nav ul li b:nth-child(1){
+        width: 84.5%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 84.5%;
+    }
+}
+
+@media (min-width: 660px) {
+    .nav ul li b:nth-child(1){
+        width: 83.8%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 83.8%;
+    }
+}
+
+@media (min-width: 690px) {
+    .nav ul li b:nth-child(1){
+        width: 83.2%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 83.2%;
+    }
+}
+
+@media (min-width: 740px) {
+    .nav ul li b:nth-child(1){
+        width: 82.3%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 82.3%;
+    }
+}
+
+@media (min-width: 795px) {
+    .nav ul li b:nth-child(1){
+        width: 81.3%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 81.3%;
+    }
+}
+
+@media (min-width: 850px) {
+    .nav ul li b:nth-child(1){
+        width: 80.4%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 80.4%;
+    }
+}
+
+@media (min-width: 910px) {
+    .nav ul li b:nth-child(1){
+        width: 79.7%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 79.7%;
+    }
+}
+
+@media (min-width: 960px) {
+    .nav ul li b:nth-child(1){
+        width: 79.1%;
+    }
+
+    .nav ul li b:nth-child(2){
+        width: 79.1%;
+    }
+}

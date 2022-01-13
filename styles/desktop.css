@@ -41,10 +41,20 @@
     
 }
 
+.nav ul li b:nth-child(1){
+    width: 81%;
+}
+
+.nav ul li b:nth-child(2){
+    width: 81%;
+}
+
+
 .nav ul li button{
     font-size: 2.5rem;
     cursor: pointer;
 }
+
 
 .main-container{
     margin-left: 16%;
@@ -64,6 +74,7 @@
 }
 
 .button__carrousel{
+    display: flex;
     width: auto;
     height: auto;
     top: 50%;

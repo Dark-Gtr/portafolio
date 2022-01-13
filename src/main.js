@@ -98,7 +98,7 @@ const partiCulas = () => {
 
 partiCulas();
 
-console.log(document.querySelector('.spark-spam__container').childElementCount);
+
 //funcion para activar los estilos que corresponden al menu
 const activateMenu = () => {
     document.querySelector(".main-header__container").classList.toggle('main-header__container--visible');
@@ -108,6 +108,7 @@ const activateMenu = () => {
 
 //funcion para dar scroll asta una seccion en especifico
 const scrollToDestino = (numero) => {
+    console.log(document.querySelector(".main-container").children[numero]);
     document.querySelector(".main-container").children[numero].scrollIntoView({
         behavior: "smooth",
         block: "center"
@@ -118,8 +119,10 @@ document.querySelector(".icon__menu-container").onclick = activateMenu;
 
 const mainList = document.querySelectorAll(".list");
 
+alert("componer el ancho de los bordes del navbar")
+
 for (let i = 0; i < mainList.length; i++) {
-    mainList[i].children[0].onclick = () => {
+    mainList[i].children[2].onclick = () => {
         /* let b = 0;
         while (b < mainList.length) {
             mainList[b++].className = "list";
@@ -271,10 +274,12 @@ const buttonCarrousel = () => {
     const slid = 83;
     const maxSlid = (slider.childElementCount - 1);
     let currentSlid = 0;
-    /* button.onclick = () => {
-        
-        slider.style.transform = `translate(-${slid}vw, 0px)`
-    } */
+    
+    if (slider.childElementCount <= 1) {
+        buttonLeft.style.visibility = "collapse";
+        buttonRight.style.visibility = "collapse";
+    }
+
     buttonRight.onclick = () => {
         if (currentSlid > -(slid * maxSlid)) {
             currentSlid -= slid;
