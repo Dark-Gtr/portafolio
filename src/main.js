@@ -19,11 +19,6 @@ document.querySelector('.header__user--CV').onclick = () => {
     pushButtonSound.play()
 }
 
-/* alert(`componer el menu con un z-index ya que la seccion estar esta sobre puesta, 
-    arreglar el width y heigh de spark ya que cuando son muchos se reduce el tamaño,
-    iniciar la animacion de spark con la particula oculta
-`) */
-
 const partiCulas = () => {
     const sparkContainer = document.querySelector('.spark-spam__container');
 
@@ -53,10 +48,6 @@ const partiCulas = () => {
                 {transform: `translate(0px, -${randomYpos}px)`}
             ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'});
 
-            /* spark.animate([
-                {boxShadow: '0px 0px 10px 3px var(--main-color), inset 0px 0px 7px 0.5px var(--main-color)', backgroundColor: 'white'},
-                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
-            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay}) */
             sparkContainer.appendChild(spark)
         }
     } else {
@@ -85,10 +76,7 @@ const partiCulas = () => {
                 {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
                 {transform: `translate(0px, -${randomYpos}px)`}
             ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
-            /* spark.animate([
-                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'},
-                {boxShadow: '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)', backgroundColor: 'white'}
-            ], {duration: 500, iterations: Infinity, direction: 'alternate', delay: randomDelay}) */
+            
             sparkContainer.appendChild(spark)
     
         }
@@ -122,12 +110,6 @@ const mainList = document.querySelectorAll(".list");
 
 for (let i = 0; i < mainList.length; i++) {
     mainList[i].children[2].onclick = () => {
-        /* let b = 0;
-        while (b < mainList.length) {
-            mainList[b++].className = "list";
-        } */ // esto está en prueba
-
-        /* mainList[i].classList.toggle("list-active"); */
 
         if (document.querySelector('html').clientWidth < 1024) {
             activateMenu();
