@@ -20,7 +20,7 @@ const activateCvContainer = () => {
     if (html.clientWidth >= 1024) {
         buttons.forEach(button => {
             button.onclick = () => {
-                
+                pushButtonSound.play();
                 document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
             }
         });
@@ -125,7 +125,7 @@ const activateMenu = () => {
 
 //funcion para dar scroll asta una seccion en especifico
 const scrollToDestino = (numero) => {
-    console.log(document.querySelector(".main-container").children[numero]);
+    
     document.querySelector(".main-container").children[numero].scrollIntoView({
         behavior: "smooth",
         block: "center"
