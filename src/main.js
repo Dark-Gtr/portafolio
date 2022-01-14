@@ -12,7 +12,7 @@ html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
 
 //Efectos de sonido
 const pushButtonSound = document.createElement('audio');
-pushButtonSound.src = '../assets/pushButton.mp3';
+pushButtonSound.src = './src/pushButton.mp3';
 pushButtonSound.preload = 'auto';
 
 document.querySelector('.header__user--CV').onclick = () => {
