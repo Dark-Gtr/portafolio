@@ -259,6 +259,7 @@ const buttonCarrousel = () => {
     if (slider.childElementCount <= 1) {
         buttonLeft.style.visibility = "collapse";
         buttonRight.style.visibility = "collapse";
+        document.querySelector(".portfolio__proyects--container").style.overflow = "hidden"
     }
 
     buttonRight.onclick = () => {
