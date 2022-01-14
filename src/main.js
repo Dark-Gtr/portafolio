@@ -17,17 +17,30 @@ const activateCvContainer = () => {
     pushButtonSound.preload = 'auto';
 
     const buttons = document.querySelectorAll('.header__user--CV');
-    buttons.forEach(button => {
-        button.onclick = () => {
-            pushButtonSound.play();
+    if (html.clientWidth >= 1024) {
+        buttons.forEach(button => {
+            button.onclick = () => {
+                
+                document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
+            }
+        });
+
+        const buttonClose = document.querySelector(".button-close__pdf-container");
+        buttonClose.onclick = () => {
             document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
         }
-    });
-
-    const buttonClose = document.querySelector(".button-close__pdf-container");
-    buttonClose.onclick = () => {
-        document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
+    } else {
+        buttons.forEach(button => {
+            button.onclick = () => {
+                pushButtonSound.play();
+                const download = document.createElement("a");
+                download.href = "./src/curriculum.pdf";
+                download.download = "CV.pdf";
+                download.click();
+            }  
+        })
     }
+    
 }
 
 activateCvContainer();
