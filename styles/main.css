@@ -318,6 +318,7 @@ body{
     font-size: 2rem;
     text-decoration: none;
     color: white;
+    border: none;
     background-color: #29B340;
     box-shadow: 0px 2px 4px #0d3413;
 }
@@ -334,6 +335,43 @@ body{
         transform: scale(0.95);
     }
 }
+
+.pdf-main__container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    
+}
+
+.pdf-main__container.pdf-active{
+    visibility: visible;
+}
+
+.pdf__container{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pdf__container button{
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    background-color: transparent;
+    border: none;
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
 
 .icon{
     position: relative;

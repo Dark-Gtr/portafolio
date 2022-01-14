@@ -11,13 +11,29 @@ html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
 
 
 //Efectos de sonido
-const pushButtonSound = document.createElement('audio');
-pushButtonSound.src = './src/pushButton.mp3';
-pushButtonSound.preload = 'auto';
+const activateCvContainer = () => {
+    const pushButtonSound = document.createElement('audio');
+    pushButtonSound.src = './src/pushButton.mp3';
+    pushButtonSound.preload = 'auto';
 
-document.querySelector('.header__user--CV').onclick = () => {
-    pushButtonSound.play()
+    const buttons = document.querySelectorAll('.header__user--CV');
+    buttons.forEach(button => {
+        button.onclick = () => {
+            pushButtonSound.play();
+            document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
+        }
+    });
+
+    const buttonClose = document.querySelector(".button-close__pdf-container");
+    buttonClose.onclick = () => {
+        document.querySelector(".pdf-main__container").classList.toggle('pdf-active');
+    }
 }
+
+activateCvContainer();
+
+
+
 
 const partiCulas = () => {
     const sparkContainer = document.querySelector('.spark-spam__container');
