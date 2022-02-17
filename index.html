@@ -274,36 +274,5 @@
     </footer> -->
 
     <script src="src/main.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
-        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCUHV-3GmB9hUivwZCpCkqPhlJ5ZQJ5nlk",
-            authDomain: "portafolio-e1482.firebaseapp.com",
-            projectId: "portafolio-e1482",
-            storageBucket: "portafolio-e1482.appspot.com",
-            messagingSenderId: "886366130705",
-            appId: "1:886366130705:web:9302c34d9dd67d48d197b0"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        const querySnapshot = await getDocs(collection(db, "messages"));
-            querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-        });
-        
-
-        
-    </script>
 </body>
 </html>
