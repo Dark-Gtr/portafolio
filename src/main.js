@@ -45,9 +45,6 @@ const activateCvContainer = () => {
 
 activateCvContainer();
 
-
-
-
 const partiCulas = () => {
     const sparkContainer = document.querySelector('.spark-spam__container');
 
@@ -310,4 +307,4 @@ const buttonCarrousel = () => {
     
 }
 
-buttonCarrousel()
+buttonCarrousel();
