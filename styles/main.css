@@ -26,7 +26,6 @@ body{
     flex-direction: column;
     border-radius: 50%;
     background-color: var(--main-color);
-    
     transition: width 0.5s, height 0.35s, border-radius 0.5s, border-top-right-radius 0.9s, margin 0.5s;
     
 }
@@ -77,6 +76,18 @@ body{
     min-height: 640px;
     padding: 12px;
     visibility: visible;
+}
+
+.header-temeSelector__container{
+    position: fixed;
+    top: 10px;
+}
+
+.header-temeSelector__container button{
+    font-size: 3rem;
+    color: white;
+    background: none;
+    border: none;
 }
 
 .header__user--photo{
