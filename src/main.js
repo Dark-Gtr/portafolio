@@ -115,9 +115,11 @@ partiCulas();
 
 //funcion para activar los estilos que corresponden al menu
 const activateMenu = () => {
+    const showTemeContainer = document.querySelector('.header-temeSelector__container')
     document.querySelector(".main-header__container").classList.toggle('main-header__container--visible');
     document.querySelector(".header-nav__container").classList.toggle("header-nav__container--visible");
     document.querySelector(".nav").classList.toggle("nav-active");
+    showTemeContainer.classList.toggle('show-teme-container')
 }
 
 //funcion para dar scroll asta una seccion en especifico
@@ -308,3 +310,9 @@ const buttonCarrousel = () => {
 }
 
 buttonCarrousel();
+
+const activateTemeSelector = () =>{
+    document.querySelector('.temes-container').classList.toggle('.temes-container-active')
+}
+
+document.querySelector('.button__temeSelector').addEventListener('click', activateTemeSelector)

@@ -79,8 +79,37 @@ body{
 }
 
 .header-temeSelector__container{
+    visibility: hidden;
+    width: auto;
+    height: auto;
     position: fixed;
-    top: 10px;
+    padding: 8px;
+    
+}
+
+.button__temeSelector{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px;
+}
+
+.temes-container{
+    display: flex;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.temes-container-active{
+    width: 300px;
+    height: 300px;
+}
+
+.show-teme-container{
+    visibility: visible;
+    transition: visibility 1s;
 }
 
 .header-temeSelector__container button{
