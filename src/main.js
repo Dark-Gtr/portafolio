@@ -1,6 +1,9 @@
 const html = document.querySelector("html");
+const arrayColorTheme = []
 const colorTheme1 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
 const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
+arrayColorTheme.push(colorTheme1)
+arrayColorTheme.push(colorTheme2)
 
 // Aquí se implementa el tema de colores´
 const selectColor = (colorTheme) => {
@@ -12,7 +15,7 @@ const selectColor = (colorTheme) => {
     html.style.setProperty('--main-color-up2', `${colorTheme[4]}`)
 }
 
-selectColor(colorTheme1);
+selectColor(arrayColorTheme[1]);
 
 
 //Efectos de sonido
@@ -316,9 +319,17 @@ const buttonCarrousel = () => {
 
 buttonCarrousel();
 
+//-------------Aqui empieza el codigo para el selector de temas
 const activateTemeSelector = () =>{
     document.querySelector('.temes-container').classList.toggle('temes-container-active')
     document.querySelector('.button__temeSelector').classList.toggle('button__temeSelector-active')
 }
 
 document.querySelector('.button__temeSelector').addEventListener('click', activateTemeSelector)
+
+const themeItemContainer = document.querySelector('.temes-container')
+arrayColorTheme.map((item) => {
+    let bufferDiv = document.createElement('div')
+    bufferDiv.className = 'item-teme'
+    themeItemContainer.appendChild(bufferDiv)
+})

@@ -103,7 +103,6 @@ body{
     display: flex;
     width: 0;
     height: 0;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -131,6 +130,10 @@ body{
 }
 
 .item-teme{
+    margin: 8px;
+}
+
+.item-teme button{
     width: 24px;
     height: 24px;
     border-radius: 50%;
