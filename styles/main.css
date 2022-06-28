@@ -88,15 +88,22 @@ body{
 }
 
 .button__temeSelector{
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
     margin: 8px;
+    font-size: 3rem;
+    color: white;
+    background: none;
+    border: none;
+    transition: margin 0.5s;
 }
 
 .button__temeSelector.button__temeSelector-active{
     color: var(--main-color);
     margin: 12px;
+    transition: margin 0.5s;
 }
 
 .temes-container{
@@ -122,22 +129,12 @@ body{
     transition: visibility 1s;
 }
 
-.header-temeSelector__container button{
-    font-size: 3rem;
-    color: white;
-    background: none;
-    border: none;
-}
-
 .item-teme{
     margin: 8px;
-}
-
-.item-teme button{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background-color: red;
+    cursor: pointer;
 }
 
 .header__user--photo{

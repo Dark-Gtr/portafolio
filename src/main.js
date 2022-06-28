@@ -5,6 +5,8 @@ const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
 arrayColorTheme.push(colorTheme1)
 arrayColorTheme.push(colorTheme2)
 
+
+
 // Aquí se implementa el tema de colores´
 const selectColor = (colorTheme) => {
     
@@ -13,10 +15,14 @@ const selectColor = (colorTheme) => {
     html.style.setProperty("--main-color", `${colorTheme[2]}`);
     html.style.setProperty('--main-color-up', `${colorTheme[3]}`);
     html.style.setProperty('--main-color-up2', `${colorTheme[4]}`)
+    localStorage.setItem('current-color', JSON.stringify(colorTheme))  
 }
 
-selectColor(arrayColorTheme[1]);
-
+if (JSON.parse(localStorage.getItem('current-color'))) {
+    selectColor(JSON.parse(localStorage.getItem('current-color')))
+} else {
+    selectColor(colorTheme1)
+}
 
 //Efectos de sonido
 const activateCvContainer = () => {
@@ -331,5 +337,7 @@ const themeItemContainer = document.querySelector('.temes-container')
 arrayColorTheme.map((item) => {
     let bufferDiv = document.createElement('div')
     bufferDiv.className = 'item-teme'
+    bufferDiv.style.backgroundColor = `${item[2]}`
+    bufferDiv.addEventListener('click', () => {selectColor(item)})
     themeItemContainer.appendChild(bufferDiv)
 })
