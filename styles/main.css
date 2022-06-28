@@ -94,16 +94,27 @@ body{
     margin: 8px;
 }
 
+.button__temeSelector.button__temeSelector-active{
+    color: var(--main-color);
+    margin: 12px;
+}
+
 .temes-container{
     display: flex;
     width: 0;
     height: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     background-color: white;
+    transition: width 1s, height 1s;
+    border-radius: 24px;
 }
 
 .temes-container-active{
-    width: 300px;
+    transition: width 1s, height 1s;
+    width: 95.5vw;
     height: 300px;
 }
 

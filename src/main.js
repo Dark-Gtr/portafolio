@@ -1,13 +1,20 @@
+const html = document.querySelector("html");
 const colorTheme2 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
 const colorTheme1 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
+const arrayThemes = []
+arrayThemes.push(colorTheme1)
+arrayThemes.push(colorTheme2)
+// Aquí se implementa el tema de colores´
+const selectColor = (colorTheme) => {
+    
+    html.style.setProperty('--main-color-down2', `${colorTheme[0]}`);
+    html.style.setProperty('--main-color-down', `${colorTheme[1]}`);
+    html.style.setProperty("--main-color", `${colorTheme[2]}`);
+    html.style.setProperty('--main-color-up', `${colorTheme[3]}`);
+    html.style.setProperty('--main-color-up2', `${colorTheme[4]}`)
+}
 
-// Aquí se implementa el tema de colores
-let html = document.querySelector("html");
-html.style.setProperty('--main-color-down2', `${colorTheme2[0]}`);
-html.style.setProperty('--main-color-down', `${colorTheme2[1]}`);
-html.style.setProperty("--main-color", `${colorTheme2[2]}`);
-html.style.setProperty('--main-color-up', `${colorTheme2[3]}`);
-html.style.setProperty('--main-color-up2', `${colorTheme2[4]}`)
+selectColor(colorTheme1);
 
 
 //Efectos de sonido
@@ -312,7 +319,8 @@ const buttonCarrousel = () => {
 buttonCarrousel();
 
 const activateTemeSelector = () =>{
-    document.querySelector('.temes-container').classList.toggle('.temes-container-active')
+    document.querySelector('.temes-container').classList.toggle('temes-container-active')
+    document.querySelector('.button__temeSelector').classList.toggle('button__temeSelector-active')
 }
 
 document.querySelector('.button__temeSelector').addEventListener('click', activateTemeSelector)
