@@ -13,6 +13,10 @@
     visibility: collapse;
 }
 
+.start__user--info{
+    font-size: 2.5rem;
+}
+
 .header-nav__container{
     width: initial;
     height: initial;
