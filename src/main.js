@@ -97,7 +97,7 @@ const partiCulas = () => {
             const spark = document.createElement('span');
             let randomYpos = Math.random() * (600 - 120) + 120;
             let randomXpos = Math.random() * (70 - 20) + 20;
-            const randomZise = Math.floor(Math.random() * (15 - 5) + 5);
+            const randomZise = Math.floor(Math.random() * (13 - 5) + 5);
             let outsetShadow;
             let insetShadow = 5;
             //const randomHeight = Math.floor(Math.random() * (10 - 5) + 5);
