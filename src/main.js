@@ -2,7 +2,7 @@ const html = document.querySelector("html");
 const arrayColorTheme = []
 const colorTheme1 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
 const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
-const colorTheme3 = ['#187002','#37FC05','#25af04','#29BD04','#209603']
+const colorTheme3 = ['#187002','#37FC05','#29BD04','#25af04','#209603']
 arrayColorTheme.push(colorTheme1)
 arrayColorTheme.push(colorTheme2)
 arrayColorTheme.push(colorTheme3)
@@ -69,6 +69,40 @@ const partiCulas = () => {
             const spark = document.createElement('span');
             let randomYpos = Math.random() * (400 - 120) + 120;
             let randomXpos = Math.random() * (70 - 20) + 20;
+            const randomZise = Math.floor(Math.random() * (13 - 5) + 5);
+            let outsetShadow;
+            let insetShadow = 5;
+            //const randomHeight = Math.floor(Math.random() * (10 - 5) + 5);
+            switch (randomZise) {
+                case 5:
+                    insetShadow = 0.5;
+                    outsetShadow = 5;
+                    break;
+                case 6:
+                    insetShadow = 1;
+                    outsetShadow = 5;
+                    break;
+
+                case 7:
+                    insetShadow = 2;
+                    outsetShadow = 5;
+                    break;
+                
+                case 8:
+                    insetShadow = 3;
+                    outsetShadow = 6;
+                    break;
+                
+                case 9:
+                    insetShadow = 4;
+                    outsetShadow = 6;
+                    break;
+            
+                default:
+                    insetShadow = 5;
+                    outsetShadow = 7;
+                    break;
+            }
     
             let test;
             if (Math.random() < 0.5) {
@@ -78,17 +112,18 @@ const partiCulas = () => {
             }
             let randomDelay = Math.random() * (3000 - 1000) + 1000;
             
-            spark.style.display = 'inline-block';
-            spark.style.width = '8px';
-            spark.style.height = '10px';
+            spark.style.display = 'inline-block'
+            spark.style.width = `${randomZise}px`
+            spark.style.height = `${randomZise}px`
             spark.style.backgroundColor = 'white'
             spark.style.borderRadius = '50%'
-            spark.style.boxShadow = '0px 0px 10px 7px var(--main-color), inset 0px 0px 5px 0.5px var(--main-color)';
+            spark.style.boxShadow = `0px 0px 10px ${outsetShadow}px var(--main-color), inset 0px 0px ${insetShadow}px 0.5px var(--main-color)`;
+            
             spark.animate([
                 {transform: 'translate(0px, 0px)'},
                 {transform: `translate(${test}${randomXpos}px,-${randomYpos / 2}px)`},
                 {transform: `translate(0px, -${randomYpos}px)`}
-            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'});
+            ], {duration: 2000, delay: randomDelay, iterations: Infinity, easing: 'linear'})
 
             sparkContainer.appendChild(spark)
         }
@@ -159,7 +194,7 @@ const partiCulas = () => {
     
 }
 
-partiCulas();
+//partiCulas();
 
 
 //funcion para activar los estilos que corresponden al menu
@@ -376,3 +411,15 @@ arrayColorTheme.map((item) => {
     bufferDiv.addEventListener('click', () => {selectColor(item)})
     themeItemContainer.appendChild(bufferDiv)
 })
+
+const tooltipEnter = (data) => {
+    const tooltip = document.querySelector('.tooltip-container')
+    tooltip.classList.toggle('tooltip-container--active')
+    tooltip.children[0].innerText = data.target.attributes.title.value
+    tooltip.style.top = `${data.clientY}px`
+    tooltip.style.left = `${data.clientX}px`
+}
+
+document.querySelector('.header__user--name').addEventListener('mouseenter', (data) => tooltipEnter(data))
+
+
