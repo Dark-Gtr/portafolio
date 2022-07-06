@@ -64,7 +64,7 @@ activateCvContainer();
 const partiCulas = () => {
     const sparkContainer = document.querySelector('.spark-spam__container');
 
-    if (html.clientWidth < 1024) {
+    if (screen.width < 1024) {
         for (let i = 0; i < 20; i++) {
             const spark = document.createElement('span');
             let randomYpos = Math.random() * (400 - 120) + 120;
@@ -413,13 +413,52 @@ arrayColorTheme.map((item) => {
 })
 
 const tooltipEnter = (data) => {
-    const tooltip = document.querySelector('.tooltip-container')
-    tooltip.classList.toggle('tooltip-container--active')
-    tooltip.children[0].innerText = data.target.attributes.title.value
-    tooltip.style.top = `${data.clientY}px`
-    tooltip.style.left = `${data.clientX}px`
+    if (!data.target.attributes.alt) {
+        
+    } else {
+        const tooltip = document.querySelector('.tooltip-container')
+        document.styleSheets[1].cssRules[33].style.transition = 'width 1s 0.5s, height 1s 0.5s, border 1s 0.5s'
+        tooltip.classList.toggle('tooltip-container--active')
+        tooltip.children[0].innerText = data.target.attributes.alt.value
+        tooltip.style.right = `unset`
+        tooltip.style.left = `unset` 
+
+        if (data.clientX > 1024) {
+            tooltip.style.right = `${screen.width - (data.clientX + 12)}px`
+            
+        } else {
+            tooltip.style.left = `${data.clientX}px` 
+        }
+        tooltip.style.top = `${data.clientY}px`
+        document.styleSheets[1].cssRules[34].style.width = `${tooltip.scrollWidth}px`
+        document.styleSheets[1].cssRules[34].style.height = `${tooltip.scrollHeight}px`
+    }
+    
 }
 
-document.querySelector('.header__user--name').addEventListener('mouseenter', (data) => tooltipEnter(data))
+const tooltipLeave = (data) => {
+    if (!data.target.attributes.alt) {
+        
+    } else {
+        const tooltip = document.querySelector('.tooltip-container')
+        tooltip.classList.toggle('tooltip-container--active')
+        document.styleSheets[1].cssRules[33].style.transition = 'width 1s 0s, height 1s 0s'
 
+    }
+}
+
+const searchLabels = () => {
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach((item) => {
+        item.addEventListener('mouseenter', (data) => tooltipEnter(data))
+        item.addEventListener('mouseleave', (data) => tooltipLeave(data))
+        console.log(item);
+    })
+
+    document.querySelector('.header__user--name').addEventListener('mouseenter', (data) => tooltipEnter(data))
+    document.querySelector('.header__user--name').addEventListener('mouseleave', (data) => tooltipLeave(data))
+
+}
+
+searchLabels()
 

@@ -265,19 +265,26 @@ body{
 .tooltip-container{
     position: fixed;
     display: flex;
-    width: max-content;
-    padding: 8px;
+    width: 0;
+    height: 0;
+    padding: 0px;
+    overflow: hidden;
     background-color: white;
     color: var(--main-color);
-    border: 2px solid var(--main-color);
+    border: none;
     border-radius: 8px;
-    visibility: hidden;
-    z-index: 100;
+    z-index: 100;    
 }
 
 .tooltip-container--active{
-    visibility: visible;
-    transition: visibility 2s;
+    border: 2px solid var(--main-color);
+}
+
+.tooltip-msj{
+    display: flex;
+    white-space: nowrap;
+    margin: 18px;
+    align-items: center;
 }
 
 @media (min-width: 347px) {
