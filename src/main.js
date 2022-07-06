@@ -194,7 +194,7 @@ const partiCulas = () => {
     
 }
 
-//partiCulas();
+partiCulas();
 
 
 //funcion para activar los estilos que corresponden al menu
