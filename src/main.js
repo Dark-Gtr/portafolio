@@ -2,7 +2,7 @@ const html = document.querySelector("html");
 const arrayColorTheme = []
 const colorTheme1 = [ '#FF9014','#E86413',"#ff5722", '#E82513', '#FF1443']
 const colorTheme2 = [ '#0C96EB','#0B57E0',"#00bcd4", '#0CEBC7', '#0BE082']
-const colorTheme3 = ['#187002','#37FC05','#29BD04','#25af04','#209603']
+const colorTheme3 = ['#187002','#37FC05','#1b8700','#25af04','#209603']
 arrayColorTheme.push(colorTheme1)
 arrayColorTheme.push(colorTheme2)
 arrayColorTheme.push(colorTheme3)

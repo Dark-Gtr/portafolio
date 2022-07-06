@@ -272,12 +272,12 @@ body{
     border: 2px solid var(--main-color);
     border-radius: 8px;
     visibility: hidden;
-    
+    z-index: 100;
 }
 
 .tooltip-container--active{
     visibility: visible;
-    transition: visibility 1s;
+    transition: visibility 2s;
 }
 
 @media (min-width: 347px) {
